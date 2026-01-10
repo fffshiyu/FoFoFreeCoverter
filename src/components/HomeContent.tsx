@@ -1,7 +1,29 @@
+import { Link } from 'react-router-dom';
 import { UnitCategory, unitCategories } from '../utils/converters';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getUnitName } from '../utils/unitNames';
 import './HomeContent.css';
+
+// 转换类别到 URL slug 的映射
+const categoryToSlug: Record<UnitCategory, string> = {
+  length: 'length-converter',
+  weight: 'weight-converter',
+  temperature: 'temperature-converter',
+  volume: 'volume-converter',
+  time: 'time-converter',
+  area: 'area-converter',
+  speed: 'speed-converter',
+  energy: 'energy-converter',
+  pressure: 'pressure-converter',
+  power: 'power-converter',
+  data: 'data-converter',
+  angle: 'angle-converter',
+  frequency: 'frequency-converter',
+  force: 'force-converter',
+  torque: 'torque-converter',
+  density: 'density-converter',
+  currency: 'currency-converter',
+};
 
 interface HomeContentProps {
   onCategorySelect?: (category: UnitCategory) => void;
@@ -39,18 +61,16 @@ export default function HomeContent({ onCategorySelect }: HomeContentProps) {
           {categories.map(([key, category]) => {
             const unitCount = Object.keys(category.units).length;
             return (
-              <div 
-                key={key} 
-                className="category-card" 
+              <Link
+                key={key}
+                to={`/${categoryToSlug[key as UnitCategory]}`}
+                className="category-card"
                 id={key}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
+                onClick={() => {
                   if (onCategorySelect) {
                     onCategorySelect(key as UnitCategory);
                   }
                 }}
-                style={{ cursor: 'pointer' }}
               >
                 <h3 className="category-card-title">{t[categoryLabels[key as UnitCategory]]} {t.converter}</h3>
                 <div className="category-units">
@@ -66,7 +86,7 @@ export default function HomeContent({ onCategorySelect }: HomeContentProps) {
                 <div className="category-info">
                   <span className="unit-count-badge">{unitCount} {t.units}</span>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

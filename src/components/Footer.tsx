@@ -1,7 +1,29 @@
+import { Link } from 'react-router-dom';
 import { UnitCategory, unitCategories } from '../utils/converters';
 import { useLanguage } from '../contexts/LanguageContext';
 import AdSense from './AdSense';
 import './Footer.css';
+
+// 转换类别到 URL slug 的映射
+const categoryToSlug: Record<UnitCategory, string> = {
+  length: 'length-converter',
+  weight: 'weight-converter',
+  temperature: 'temperature-converter',
+  volume: 'volume-converter',
+  time: 'time-converter',
+  area: 'area-converter',
+  speed: 'speed-converter',
+  energy: 'energy-converter',
+  pressure: 'pressure-converter',
+  power: 'power-converter',
+  data: 'data-converter',
+  angle: 'angle-converter',
+  frequency: 'frequency-converter',
+  force: 'force-converter',
+  torque: 'torque-converter',
+  density: 'density-converter',
+  currency: 'currency-converter',
+};
 
 interface FooterProps {
   onCategorySelect?: (category: UnitCategory) => void;
@@ -38,17 +60,16 @@ export default function Footer({ onCategorySelect }: FooterProps) {
           <h3 className="footer-title">{t.unitConverters}</h3>
           <div className="footer-links">
             {categories.slice(0, 8).map(([key]) => (
-              <a 
+              <Link 
                 key={key} 
-                href={`#${key}`} 
+                to={`/${categoryToSlug[key as UnitCategory]}`}
                 className="footer-link"
-                onClick={(e) => {
-                  e.preventDefault();
+                onClick={() => {
                   onCategorySelect?.(key as UnitCategory);
                 }}
               >
                 {t[categoryLabels[key as UnitCategory]]} {t.converter}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -57,17 +78,16 @@ export default function Footer({ onCategorySelect }: FooterProps) {
           <h3 className="footer-title">{t.moreCategories}</h3>
           <div className="footer-links">
             {categories.slice(8).map(([key]) => (
-              <a 
+              <Link 
                 key={key} 
-                href={`#${key}`} 
+                to={`/${categoryToSlug[key as UnitCategory]}`}
                 className="footer-link"
-                onClick={(e) => {
-                  e.preventDefault();
+                onClick={() => {
                   onCategorySelect?.(key as UnitCategory);
                 }}
               >
                 {t[categoryLabels[key as UnitCategory]]} {t.converter}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
@@ -76,17 +96,16 @@ export default function Footer({ onCategorySelect }: FooterProps) {
           <h3 className="footer-title">{t.sitemap}</h3>
           <div className="footer-links">
             {categories.slice(0, 8).map(([key]) => (
-              <a 
+              <Link 
                 key={key}
-                href={`#${key}`} 
+                to={`/${categoryToSlug[key as UnitCategory]}`}
                 className="footer-link"
-                onClick={(e) => {
-                  e.preventDefault();
+                onClick={() => {
                   onCategorySelect?.(key as UnitCategory);
                 }}
               >
                 {t[categoryLabels[key as UnitCategory]]}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
