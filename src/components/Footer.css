@@ -1,0 +1,123 @@
+.footer {
+  background-image: url('../images/Group 5.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border-top: 1px solid var(--border-color);
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-content {
+  max-width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  margin-bottom: 32px;
+  padding: 0 40px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.2px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+  line-height: 1.6;
+}
+
+.footer-link:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.contact-email {
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.contact-email:hover {
+  color: var(--text-secondary);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 24px 40px;
+  border-top: 2px solid var(--border-color);
+  text-align: center;
+}
+
+.copyright {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 32px 16px 16px;
+  }
+
+  .footer-content {
+    padding: 0 16px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 24px;
+  }
+
+  .footer-bottom {
+    padding: 24px 16px;
+  }
+
+  .footer-title {
+    font-size: 15px;
+  }
+
+  .footer-link,
+  .contact-text,
+  .contact-email {
+    font-size: 13px;
+  }
+}

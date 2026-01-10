@@ -1,0 +1,714 @@
+import { Language } from './i18n';
+
+export type UnitKey = 
+  // Length
+  | 'meter' | 'kilometer' | 'centimeter' | 'millimeter' | 'inch' | 'foot' | 'yard' | 'mile' | 'nauticalMile'
+  // Weight
+  | 'kilogram' | 'gram' | 'milligram' | 'ton' | 'pound' | 'ounce' | 'stone'
+  // Temperature
+  | 'celsius' | 'fahrenheit' | 'kelvin'
+  // Volume
+  | 'liter' | 'milliliter' | 'cubicMeter' | 'cubicCentimeter' | 'gallon' | 'quart' | 'pint' | 'cup' | 'fluidOunce'
+  // Time
+  | 'second' | 'millisecond' | 'minute' | 'hour' | 'day' | 'week' | 'month' | 'year'
+  // Area
+  | 'squareMeter' | 'squareKilometer' | 'squareCentimeter' | 'hectare' | 'acre' | 'squareFoot' | 'squareInch' | 'squareMile'
+  // Speed
+  | 'meterPerSecond' | 'kilometerPerHour' | 'milePerHour' | 'knot' | 'footPerSecond'
+  // Energy
+  | 'joule' | 'kilojoule' | 'calorie' | 'kilocalorie' | 'wattHour' | 'kilowattHour' | 'btu'
+  // Pressure
+  | 'pascal' | 'kilopascal' | 'bar' | 'atmosphere' | 'psi' | 'torr'
+  // Power
+  | 'watt' | 'kilowatt' | 'megawatt' | 'horsepower' | 'btuPerHour'
+  // Data
+  | 'bit' | 'byte' | 'kilobyte' | 'megabyte' | 'gigabyte' | 'terabyte'
+  // Angle
+  | 'degree' | 'radian' | 'gradian' | 'arcminute' | 'arcsecond'
+  // Frequency
+  | 'hertz' | 'kilohertz' | 'megahertz' | 'gigahertz'
+  // Force
+  | 'newton' | 'kilonewton' | 'poundForce' | 'kilogramForce'
+  // Torque
+  | 'newtonMeter' | 'poundFoot' | 'poundInch' | 'kilogramMeter'
+  // Density
+  | 'kilogramPerCubicMeter' | 'gramPerCubicCentimeter' | 'poundPerCubicFoot' | 'poundPerCubicInch';
+
+export const unitNames: Record<Language, Record<UnitKey, string>> = {
+  en: {
+    // Length
+    meter: 'Meter',
+    kilometer: 'Kilometer',
+    centimeter: 'Centimeter',
+    millimeter: 'Millimeter',
+    inch: 'Inch',
+    foot: 'Foot',
+    yard: 'Yard',
+    mile: 'Mile',
+    nauticalMile: 'Nautical Mile',
+    // Weight
+    kilogram: 'Kilogram',
+    gram: 'Gram',
+    milligram: 'Milligram',
+    ton: 'Ton',
+    pound: 'Pound',
+    ounce: 'Ounce',
+    stone: 'Stone',
+    // Temperature
+    celsius: 'Celsius',
+    fahrenheit: 'Fahrenheit',
+    kelvin: 'Kelvin',
+    // Volume
+    liter: 'Liter',
+    milliliter: 'Milliliter',
+    cubicMeter: 'Cubic Meter',
+    cubicCentimeter: 'Cubic Centimeter',
+    gallon: 'Gallon',
+    quart: 'Quart',
+    pint: 'Pint',
+    cup: 'Cup',
+    fluidOunce: 'Fluid Ounce',
+    // Time
+    second: 'Second',
+    millisecond: 'Millisecond',
+    minute: 'Minute',
+    hour: 'Hour',
+    day: 'Day',
+    week: 'Week',
+    month: 'Month',
+    year: 'Year',
+    // Area
+    squareMeter: 'Square Meter',
+    squareKilometer: 'Square Kilometer',
+    squareCentimeter: 'Square Centimeter',
+    hectare: 'Hectare',
+    acre: 'Acre',
+    squareFoot: 'Square Foot',
+    squareInch: 'Square Inch',
+    squareMile: 'Square Mile',
+    // Speed
+    meterPerSecond: 'Meter per Second',
+    kilometerPerHour: 'Kilometer per Hour',
+    milePerHour: 'Mile per Hour',
+    knot: 'Knot',
+    footPerSecond: 'Foot per Second',
+    // Energy
+    joule: 'Joule',
+    kilojoule: 'Kilojoule',
+    calorie: 'Calorie',
+    kilocalorie: 'Kilocalorie',
+    wattHour: 'Watt Hour',
+    kilowattHour: 'Kilowatt Hour',
+    btu: 'BTU',
+    // Pressure
+    pascal: 'Pascal',
+    kilopascal: 'Kilopascal',
+    bar: 'Bar',
+    atmosphere: 'Atmosphere',
+    psi: 'PSI',
+    torr: 'Torr',
+    // Power
+    watt: 'Watt',
+    kilowatt: 'Kilowatt',
+    megawatt: 'Megawatt',
+    horsepower: 'Horsepower',
+    btuPerHour: 'BTU per Hour',
+    // Data
+    bit: 'Bit',
+    byte: 'Byte',
+    kilobyte: 'Kilobyte',
+    megabyte: 'Megabyte',
+    gigabyte: 'Gigabyte',
+    terabyte: 'Terabyte',
+    // Angle
+    degree: 'Degree',
+    radian: 'Radian',
+    gradian: 'Gradian',
+    arcminute: 'Arcminute',
+    arcsecond: 'Arcsecond',
+    // Frequency
+    hertz: 'Hertz',
+    kilohertz: 'Kilohertz',
+    megahertz: 'Megahertz',
+    gigahertz: 'Gigahertz',
+    // Force
+    newton: 'Newton',
+    kilonewton: 'Kilonewton',
+    poundForce: 'Pound Force',
+    kilogramForce: 'Kilogram Force',
+    // Torque
+    newtonMeter: 'Newton Meter',
+    poundFoot: 'Pound Foot',
+    poundInch: 'Pound Inch',
+    kilogramMeter: 'Kilogram Meter',
+    // Density
+    kilogramPerCubicMeter: 'Kilogram per Cubic Meter',
+    gramPerCubicCentimeter: 'Gram per Cubic Centimeter',
+    poundPerCubicFoot: 'Pound per Cubic Foot',
+    poundPerCubicInch: 'Pound per Cubic Inch',
+  },
+  zh: {
+    // Length
+    meter: '米',
+    kilometer: '千米',
+    centimeter: '厘米',
+    millimeter: '毫米',
+    inch: '英寸',
+    foot: '英尺',
+    yard: '码',
+    mile: '英里',
+    nauticalMile: '海里',
+    // Weight
+    kilogram: '千克',
+    gram: '克',
+    milligram: '毫克',
+    ton: '吨',
+    pound: '磅',
+    ounce: '盎司',
+    stone: '英石',
+    // Temperature
+    celsius: '摄氏度',
+    fahrenheit: '华氏度',
+    kelvin: '开尔文',
+    // Volume
+    liter: '升',
+    milliliter: '毫升',
+    cubicMeter: '立方米',
+    cubicCentimeter: '立方厘米',
+    gallon: '加仑',
+    quart: '夸脱',
+    pint: '品脱',
+    cup: '杯',
+    fluidOunce: '液盎司',
+    // Time
+    second: '秒',
+    millisecond: '毫秒',
+    minute: '分钟',
+    hour: '小时',
+    day: '天',
+    week: '周',
+    month: '月',
+    year: '年',
+    // Area
+    squareMeter: '平方米',
+    squareKilometer: '平方千米',
+    squareCentimeter: '平方厘米',
+    hectare: '公顷',
+    acre: '英亩',
+    squareFoot: '平方英尺',
+    squareInch: '平方英寸',
+    squareMile: '平方英里',
+    // Speed
+    meterPerSecond: '米/秒',
+    kilometerPerHour: '千米/小时',
+    milePerHour: '英里/小时',
+    knot: '节',
+    footPerSecond: '英尺/秒',
+    // Energy
+    joule: '焦耳',
+    kilojoule: '千焦',
+    calorie: '卡路里',
+    kilocalorie: '千卡',
+    wattHour: '瓦时',
+    kilowattHour: '千瓦时',
+    btu: '英热单位',
+    // Pressure
+    pascal: '帕斯卡',
+    kilopascal: '千帕',
+    bar: '巴',
+    atmosphere: '标准大气压',
+    psi: '磅力每平方英寸',
+    torr: '托',
+    // Power
+    watt: '瓦特',
+    kilowatt: '千瓦',
+    megawatt: '兆瓦',
+    horsepower: '马力',
+    btuPerHour: 'BTU/小时',
+    // Data
+    bit: '位',
+    byte: '字节',
+    kilobyte: '千字节',
+    megabyte: '兆字节',
+    gigabyte: '吉字节',
+    terabyte: '太字节',
+    // Angle
+    degree: '度',
+    radian: '弧度',
+    gradian: '百分度',
+    arcminute: '角分',
+    arcsecond: '角秒',
+    // Frequency
+    hertz: '赫兹',
+    kilohertz: '千赫',
+    megahertz: '兆赫',
+    gigahertz: '吉赫',
+    // Force
+    newton: '牛顿',
+    kilonewton: '千牛',
+    poundForce: '磅力',
+    kilogramForce: '千克力',
+    // Torque
+    newtonMeter: '牛米',
+    poundFoot: '磅英尺',
+    poundInch: '磅英寸',
+    kilogramMeter: '千克米',
+    // Density
+    kilogramPerCubicMeter: '千克/立方米',
+    gramPerCubicCentimeter: '克/立方厘米',
+    poundPerCubicFoot: '磅/立方英尺',
+    poundPerCubicInch: '磅/立方英寸',
+  },
+  es: {
+    // Length
+    meter: 'Metro',
+    kilometer: 'Kilómetro',
+    centimeter: 'Centímetro',
+    millimeter: 'Milímetro',
+    inch: 'Pulgada',
+    foot: 'Pie',
+    yard: 'Yarda',
+    mile: 'Milla',
+    nauticalMile: 'Milla Náutica',
+    // Weight
+    kilogram: 'Kilogramo',
+    gram: 'Gramo',
+    milligram: 'Miligramo',
+    ton: 'Tonelada',
+    pound: 'Libra',
+    ounce: 'Onza',
+    stone: 'Stone',
+    // Temperature
+    celsius: 'Celsius',
+    fahrenheit: 'Fahrenheit',
+    kelvin: 'Kelvin',
+    // Volume
+    liter: 'Litro',
+    milliliter: 'Mililitro',
+    cubicMeter: 'Metro Cúbico',
+    cubicCentimeter: 'Centímetro Cúbico',
+    gallon: 'Galón',
+    quart: 'Cuarto',
+    pint: 'Pinta',
+    cup: 'Taza',
+    fluidOunce: 'Onza Líquida',
+    // Time
+    second: 'Segundo',
+    millisecond: 'Milisegundo',
+    minute: 'Minuto',
+    hour: 'Hora',
+    day: 'Día',
+    week: 'Semana',
+    month: 'Mes',
+    year: 'Año',
+    // Area
+    squareMeter: 'Metro Cuadrado',
+    squareKilometer: 'Kilómetro Cuadrado',
+    squareCentimeter: 'Centímetro Cuadrado',
+    hectare: 'Hectárea',
+    acre: 'Acre',
+    squareFoot: 'Pie Cuadrado',
+    squareInch: 'Pulgada Cuadrada',
+    squareMile: 'Milla Cuadrada',
+    // Speed
+    meterPerSecond: 'Metro por Segundo',
+    kilometerPerHour: 'Kilómetro por Hora',
+    milePerHour: 'Milla por Hora',
+    knot: 'Nudo',
+    footPerSecond: 'Pie por Segundo',
+    // Energy
+    joule: 'Joule',
+    kilojoule: 'Kilojoule',
+    calorie: 'Caloría',
+    kilocalorie: 'Kilocaloría',
+    wattHour: 'Vatio Hora',
+    kilowattHour: 'Kilovatio Hora',
+    btu: 'BTU',
+    // Pressure
+    pascal: 'Pascal',
+    kilopascal: 'Kilopascal',
+    bar: 'Bar',
+    atmosphere: 'Atmósfera',
+    psi: 'PSI',
+    torr: 'Torr',
+    // Power
+    watt: 'Vatio',
+    kilowatt: 'Kilovatio',
+    megawatt: 'Megavatio',
+    horsepower: 'Caballo de Fuerza',
+    btuPerHour: 'BTU por Hora',
+    // Data
+    bit: 'Bit',
+    byte: 'Byte',
+    kilobyte: 'Kilobyte',
+    megabyte: 'Megabyte',
+    gigabyte: 'Gigabyte',
+    terabyte: 'Terabyte',
+    // Angle
+    degree: 'Grado',
+    radian: 'Radián',
+    gradian: 'Gradian',
+    arcminute: 'Minuto de Arco',
+    arcsecond: 'Segundo de Arco',
+    // Frequency
+    hertz: 'Hertz',
+    kilohertz: 'Kilohertz',
+    megahertz: 'Megahertz',
+    gigahertz: 'Gigahertz',
+    // Force
+    newton: 'Newton',
+    kilonewton: 'Kilonewton',
+    poundForce: 'Libra Fuerza',
+    kilogramForce: 'Kilogramo Fuerza',
+    // Torque
+    newtonMeter: 'Newton Metro',
+    poundFoot: 'Libra Pie',
+    poundInch: 'Libra Pulgada',
+    kilogramMeter: 'Kilogramo Metro',
+    // Density
+    kilogramPerCubicMeter: 'Kilogramo por Metro Cúbico',
+    gramPerCubicCentimeter: 'Gramo por Centímetro Cúbico',
+    poundPerCubicFoot: 'Libra por Pie Cúbico',
+    poundPerCubicInch: 'Libra por Pulgada Cúbica',
+  },
+  fr: {
+    // Length
+    meter: 'Mètre',
+    kilometer: 'Kilomètre',
+    centimeter: 'Centimètre',
+    millimeter: 'Millimètre',
+    inch: 'Pouce',
+    foot: 'Pied',
+    yard: 'Yard',
+    mile: 'Mile',
+    nauticalMile: 'Mille Nautique',
+    // Weight
+    kilogram: 'Kilogramme',
+    gram: 'Gramme',
+    milligram: 'Milligramme',
+    ton: 'Tonne',
+    pound: 'Livre',
+    ounce: 'Once',
+    stone: 'Stone',
+    // Temperature
+    celsius: 'Celsius',
+    fahrenheit: 'Fahrenheit',
+    kelvin: 'Kelvin',
+    // Volume
+    liter: 'Litre',
+    milliliter: 'Millilitre',
+    cubicMeter: 'Mètre Cube',
+    cubicCentimeter: 'Centimètre Cube',
+    gallon: 'Gallon',
+    quart: 'Quart',
+    pint: 'Pinte',
+    cup: 'Tasse',
+    fluidOunce: 'Once Liquide',
+    // Time
+    second: 'Seconde',
+    millisecond: 'Milliseconde',
+    minute: 'Minute',
+    hour: 'Heure',
+    day: 'Jour',
+    week: 'Semaine',
+    month: 'Mois',
+    year: 'Année',
+    // Area
+    squareMeter: 'Mètre Carré',
+    squareKilometer: 'Kilomètre Carré',
+    squareCentimeter: 'Centimètre Carré',
+    hectare: 'Hectare',
+    acre: 'Acre',
+    squareFoot: 'Pied Carré',
+    squareInch: 'Pouce Carré',
+    squareMile: 'Mile Carré',
+    // Speed
+    meterPerSecond: 'Mètre par Seconde',
+    kilometerPerHour: 'Kilomètre par Heure',
+    milePerHour: 'Mile par Heure',
+    knot: 'Nœud',
+    footPerSecond: 'Pied par Seconde',
+    // Energy
+    joule: 'Joule',
+    kilojoule: 'Kilojoule',
+    calorie: 'Calorie',
+    kilocalorie: 'Kilocalorie',
+    wattHour: 'Watt Heure',
+    kilowattHour: 'Kilowatt Heure',
+    btu: 'BTU',
+    // Pressure
+    pascal: 'Pascal',
+    kilopascal: 'Kilopascal',
+    bar: 'Bar',
+    atmosphere: 'Atmosphère',
+    psi: 'PSI',
+    torr: 'Torr',
+    // Power
+    watt: 'Watt',
+    kilowatt: 'Kilowatt',
+    megawatt: 'Mégawatt',
+    horsepower: 'Cheval Vapeur',
+    btuPerHour: 'BTU par Heure',
+    // Data
+    bit: 'Bit',
+    byte: 'Octet',
+    kilobyte: 'Kilooctet',
+    megabyte: 'Mégaoctet',
+    gigabyte: 'Gigaoctet',
+    terabyte: 'Téraoctet',
+    // Angle
+    degree: 'Degré',
+    radian: 'Radian',
+    gradian: 'Grade',
+    arcminute: 'Minute d\'Arc',
+    arcsecond: 'Seconde d\'Arc',
+    // Frequency
+    hertz: 'Hertz',
+    kilohertz: 'Kilohertz',
+    megahertz: 'Mégahertz',
+    gigahertz: 'Gigahertz',
+    // Force
+    newton: 'Newton',
+    kilonewton: 'Kilonewton',
+    poundForce: 'Livre Force',
+    kilogramForce: 'Kilogramme Force',
+    // Torque
+    newtonMeter: 'Newton Mètre',
+    poundFoot: 'Livre Pied',
+    poundInch: 'Livre Pouce',
+    kilogramMeter: 'Kilogramme Mètre',
+    // Density
+    kilogramPerCubicMeter: 'Kilogramme par Mètre Cube',
+    gramPerCubicCentimeter: 'Gramme par Centimètre Cube',
+    poundPerCubicFoot: 'Livre par Pied Cube',
+    poundPerCubicInch: 'Livre par Pouce Cube',
+  },
+  de: {
+    // Length
+    meter: 'Meter',
+    kilometer: 'Kilometer',
+    centimeter: 'Zentimeter',
+    millimeter: 'Millimeter',
+    inch: 'Zoll',
+    foot: 'Fuß',
+    yard: 'Yard',
+    mile: 'Meile',
+    nauticalMile: 'Seemeile',
+    // Weight
+    kilogram: 'Kilogramm',
+    gram: 'Gramm',
+    milligram: 'Milligramm',
+    ton: 'Tonne',
+    pound: 'Pfund',
+    ounce: 'Unze',
+    stone: 'Stone',
+    // Temperature
+    celsius: 'Celsius',
+    fahrenheit: 'Fahrenheit',
+    kelvin: 'Kelvin',
+    // Volume
+    liter: 'Liter',
+    milliliter: 'Milliliter',
+    cubicMeter: 'Kubikmeter',
+    cubicCentimeter: 'Kubikzentimeter',
+    gallon: 'Gallon',
+    quart: 'Quart',
+    pint: 'Pint',
+    cup: 'Tasse',
+    fluidOunce: 'Flüssigunze',
+    // Time
+    second: 'Sekunde',
+    millisecond: 'Millisekunde',
+    minute: 'Minute',
+    hour: 'Stunde',
+    day: 'Tag',
+    week: 'Woche',
+    month: 'Monat',
+    year: 'Jahr',
+    // Area
+    squareMeter: 'Quadratmeter',
+    squareKilometer: 'Quadratkilometer',
+    squareCentimeter: 'Quadratzentimeter',
+    hectare: 'Hektar',
+    acre: 'Acre',
+    squareFoot: 'Quadratfuß',
+    squareInch: 'Quadratzoll',
+    squareMile: 'Quadratmeile',
+    // Speed
+    meterPerSecond: 'Meter pro Sekunde',
+    kilometerPerHour: 'Kilometer pro Stunde',
+    milePerHour: 'Meile pro Stunde',
+    knot: 'Knoten',
+    footPerSecond: 'Fuß pro Sekunde',
+    // Energy
+    joule: 'Joule',
+    kilojoule: 'Kilojoule',
+    calorie: 'Kalorie',
+    kilocalorie: 'Kilokalorie',
+    wattHour: 'Wattstunde',
+    kilowattHour: 'Kilowattstunde',
+    btu: 'BTU',
+    // Pressure
+    pascal: 'Pascal',
+    kilopascal: 'Kilopascal',
+    bar: 'Bar',
+    atmosphere: 'Atmosphäre',
+    psi: 'PSI',
+    torr: 'Torr',
+    // Power
+    watt: 'Watt',
+    kilowatt: 'Kilowatt',
+    megawatt: 'Megawatt',
+    horsepower: 'Pferdestärke',
+    btuPerHour: 'BTU pro Stunde',
+    // Data
+    bit: 'Bit',
+    byte: 'Byte',
+    kilobyte: 'Kilobyte',
+    megabyte: 'Megabyte',
+    gigabyte: 'Gigabyte',
+    terabyte: 'Terabyte',
+    // Angle
+    degree: 'Grad',
+    radian: 'Radian',
+    gradian: 'Gon',
+    arcminute: 'Bogenminute',
+    arcsecond: 'Bogensekunde',
+    // Frequency
+    hertz: 'Hertz',
+    kilohertz: 'Kilohertz',
+    megahertz: 'Megahertz',
+    gigahertz: 'Gigahertz',
+    // Force
+    newton: 'Newton',
+    kilonewton: 'Kilonewton',
+    poundForce: 'Pfund Kraft',
+    kilogramForce: 'Kilogramm Kraft',
+    // Torque
+    newtonMeter: 'Newton Meter',
+    poundFoot: 'Pfund Fuß',
+    poundInch: 'Pfund Zoll',
+    kilogramMeter: 'Kilogramm Meter',
+    // Density
+    kilogramPerCubicMeter: 'Kilogramm pro Kubikmeter',
+    gramPerCubicCentimeter: 'Gramm pro Kubikzentimeter',
+    poundPerCubicFoot: 'Pfund pro Kubikfuß',
+    poundPerCubicInch: 'Pfund pro Kubikzoll',
+  },
+  ja: {
+    // Length
+    meter: 'メートル',
+    kilometer: 'キロメートル',
+    centimeter: 'センチメートル',
+    millimeter: 'ミリメートル',
+    inch: 'インチ',
+    foot: 'フィート',
+    yard: 'ヤード',
+    mile: 'マイル',
+    nauticalMile: '海里',
+    // Weight
+    kilogram: 'キログラム',
+    gram: 'グラム',
+    milligram: 'ミリグラム',
+    ton: 'トン',
+    pound: 'ポンド',
+    ounce: 'オンス',
+    stone: 'ストーン',
+    // Temperature
+    celsius: '摂氏',
+    fahrenheit: '華氏',
+    kelvin: 'ケルビン',
+    // Volume
+    liter: 'リットル',
+    milliliter: 'ミリリットル',
+    cubicMeter: '立方メートル',
+    cubicCentimeter: '立方センチメートル',
+    gallon: 'ガロン',
+    quart: 'クォート',
+    pint: 'パイント',
+    cup: 'カップ',
+    fluidOunce: '液量オンス',
+    // Time
+    second: '秒',
+    millisecond: 'ミリ秒',
+    minute: '分',
+    hour: '時間',
+    day: '日',
+    week: '週',
+    month: '月',
+    year: '年',
+    // Area
+    squareMeter: '平方メートル',
+    squareKilometer: '平方キロメートル',
+    squareCentimeter: '平方センチメートル',
+    hectare: 'ヘクタール',
+    acre: 'エーカー',
+    squareFoot: '平方フィート',
+    squareInch: '平方インチ',
+    squareMile: '平方マイル',
+    // Speed
+    meterPerSecond: 'メートル毎秒',
+    kilometerPerHour: 'キロメートル毎時',
+    milePerHour: 'マイル毎時',
+    knot: 'ノット',
+    footPerSecond: 'フィート毎秒',
+    // Energy
+    joule: 'ジュール',
+    kilojoule: 'キロジュール',
+    calorie: 'カロリー',
+    kilocalorie: 'キロカロリー',
+    wattHour: 'ワット時',
+    kilowattHour: 'キロワット時',
+    btu: 'BTU',
+    // Pressure
+    pascal: 'パスカル',
+    kilopascal: 'キロパスカル',
+    bar: 'バール',
+    atmosphere: '大気圧',
+    psi: 'PSI',
+    torr: 'トル',
+    // Power
+    watt: 'ワット',
+    kilowatt: 'キロワット',
+    megawatt: 'メガワット',
+    horsepower: '馬力',
+    btuPerHour: 'BTU毎時',
+    // Data
+    bit: 'ビット',
+    byte: 'バイト',
+    kilobyte: 'キロバイト',
+    megabyte: 'メガバイト',
+    gigabyte: 'ギガバイト',
+    terabyte: 'テラバイト',
+    // Angle
+    degree: '度',
+    radian: 'ラジアン',
+    gradian: 'グラジアン',
+    arcminute: '角分',
+    arcsecond: '角秒',
+    // Frequency
+    hertz: 'ヘルツ',
+    kilohertz: 'キロヘルツ',
+    megahertz: 'メガヘルツ',
+    gigahertz: 'ギガヘルツ',
+    // Force
+    newton: 'ニュートン',
+    kilonewton: 'キロニュートン',
+    poundForce: 'ポンド力',
+    kilogramForce: 'キログラム力',
+    // Torque
+    newtonMeter: 'ニュートンメートル',
+    poundFoot: 'ポンドフィート',
+    poundInch: 'ポンドインチ',
+    kilogramMeter: 'キログラムメートル',
+    // Density
+    kilogramPerCubicMeter: 'キログラム毎立方メートル',
+    gramPerCubicCentimeter: 'グラム毎立方センチメートル',
+    poundPerCubicFoot: 'ポンド毎立方フィート',
+    poundPerCubicInch: 'ポンド毎立方インチ',
+  },
+};
+
+export function getUnitName(unitKey: string, language: Language): string {
+  return unitNames[language][unitKey as UnitKey] || unitKey;
+}
