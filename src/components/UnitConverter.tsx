@@ -3,6 +3,7 @@ import { UnitCategory, unitCategories, convertUnit } from '../utils/converters';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getUnitName } from '../utils/unitNames';
 import { convertCurrency } from '../utils/exchangeRate';
+import { getCurrencyFlag } from '../utils/currencyFlags';
 import './UnitConverter.css';
 
 interface UnitConverterProps {
@@ -147,7 +148,12 @@ export default function UnitConverter({ category }: UnitConverterProps) {
               onChange={(e) => handleFromChange(e.target.value)}
               placeholder={t.inputValue}
             />
-            <div className="input-unit-label">{fromUnitObj.symbol}</div>
+            <div className="input-unit-label">
+              {category === 'currency' && getCurrencyFlag(fromUnit) && (
+                <span className="input-flag">{getCurrencyFlag(fromUnit)} </span>
+              )}
+              {fromUnitObj.symbol}
+            </div>
           </div>
 
           <button className="swap-button-large" onClick={handleSwap} title="交换单位">
@@ -167,7 +173,12 @@ export default function UnitConverter({ category }: UnitConverterProps) {
               onChange={(e) => handleToChange(e.target.value)}
               placeholder={t.inputValue}
             />
-            <div className="output-unit-label">{toUnitObj.symbol}</div>
+            <div className="output-unit-label">
+              {category === 'currency' && getCurrencyFlag(toUnit) && (
+                <span className="output-flag">{getCurrencyFlag(toUnit)} </span>
+              )}
+              {toUnitObj.symbol}
+            </div>
           </div>
         </div>
       </div>
@@ -176,32 +187,40 @@ export default function UnitConverter({ category }: UnitConverterProps) {
         <div className="units-group">
           <div className="units-label">{t.from}</div>
           <div className="units-grid">
-            {unitEntries.map(([key, unit]) => (
-              <button
-                key={key}
-                className={`unit-button ${fromUnit === key ? 'active' : ''}`}
-                onClick={() => setFromUnit(key)}
-              >
-                <span className="unit-name">{getUnitName(key, language)}</span>
-                <span className="unit-symbol">({unit.symbol})</span>
-              </button>
-            ))}
+            {unitEntries.map(([key, unit]) => {
+              const flag = category === 'currency' ? getCurrencyFlag(key) : '';
+              return (
+                <button
+                  key={key}
+                  className={`unit-button ${fromUnit === key ? 'active' : ''}`}
+                  onClick={() => setFromUnit(key)}
+                >
+                  {flag && <span className="unit-flag">{flag}</span>}
+                  <span className="unit-name">{getUnitName(key, language)}</span>
+                  <span className="unit-symbol">({unit.symbol})</span>
+                </button>
+              );
+            })}
           </div>
         </div>
 
         <div className="units-group">
           <div className="units-label">{t.to}</div>
           <div className="units-grid">
-            {unitEntries.map(([key, unit]) => (
-              <button
-                key={key}
-                className={`unit-button ${toUnit === key ? 'active' : ''}`}
-                onClick={() => setToUnit(key)}
-              >
-                <span className="unit-name">{getUnitName(key, language)}</span>
-                <span className="unit-symbol">({unit.symbol})</span>
-              </button>
-            ))}
+            {unitEntries.map(([key, unit]) => {
+              const flag = category === 'currency' ? getCurrencyFlag(key) : '';
+              return (
+                <button
+                  key={key}
+                  className={`unit-button ${toUnit === key ? 'active' : ''}`}
+                  onClick={() => setToUnit(key)}
+                >
+                  {flag && <span className="unit-flag">{flag}</span>}
+                  <span className="unit-name">{getUnitName(key, language)}</span>
+                  <span className="unit-symbol">({unit.symbol})</span>
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>

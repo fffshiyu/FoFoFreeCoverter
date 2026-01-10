@@ -96,6 +96,16 @@
   color: var(--text-secondary);
   text-align: center;
   letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.input-flag,
+.output-flag {
+  font-size: 18px;
+  line-height: 1;
 }
 
 .converter-units-section {
@@ -172,6 +182,17 @@
 .unit-button.active .unit-symbol {
   color: var(--bg-color);
   opacity: 0.9;
+}
+
+.unit-flag {
+  font-size: 20px;
+  line-height: 1;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.unit-button.active .unit-flag {
+  filter: brightness(0) invert(1);
 }
 
 .unit-name {
