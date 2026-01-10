@@ -4,6 +4,7 @@ import UnitConverter from './components/UnitConverter';
 import HomeContent from './components/HomeContent';
 import Footer from './components/Footer';
 import LanguageSelector from './components/LanguageSelector';
+import AdSense from './components/AdSense';
 import { useLanguage } from './contexts/LanguageContext';
 import {
   LengthIcon,
@@ -87,31 +88,53 @@ function AppContent() {
         <LanguageSelector currentLanguage={language} onLanguageChange={setLanguage} />
       </header>
 
-      <main className="app-main">
-        <div className="category-selector">
-          {Object.entries(unitCategories).map(([key]) => {
-            const IconComponent = categoryIcons[key as UnitCategory];
-            const labelKey = categoryLabels[key as UnitCategory];
-            return (
-              <button
-                key={key}
-                className={`category-button ${selectedCategory === key ? 'active' : ''}`}
-                onClick={() => handleCategoryClick(key as UnitCategory)}
-                title={t[labelKey]}
-              >
-                <IconComponent className="button-icon" size={16} />
-                <span className="button-text">{t[labelKey]}</span>
-              </button>
-            );
-          })}
-        </div>
+      <div className="app-layout">
+        {/* 左侧广告 */}
+        <aside className="sidebar-ads sidebar-ads-left">
+          <AdSense 
+            adSlot="left-sidebar" 
+            adFormat="vertical"
+            style={{ minWidth: '160px', minHeight: '600px' }}
+            className="sidebar-ad"
+          />
+        </aside>
 
-        <div className="converter-wrapper">
-          <UnitConverter category={selectedCategory} />
-        </div>
+        <main className="app-main">
+          <div className="category-selector">
+            {Object.entries(unitCategories).map(([key]) => {
+              const IconComponent = categoryIcons[key as UnitCategory];
+              const labelKey = categoryLabels[key as UnitCategory];
+              return (
+                <button
+                  key={key}
+                  className={`category-button ${selectedCategory === key ? 'active' : ''}`}
+                  onClick={() => handleCategoryClick(key as UnitCategory)}
+                  title={t[labelKey]}
+                >
+                  <IconComponent className="button-icon" size={16} />
+                  <span className="button-text">{t[labelKey]}</span>
+                </button>
+              );
+            })}
+          </div>
 
-        <HomeContent onCategorySelect={handleCategoryClick} />
-      </main>
+          <div className="converter-wrapper">
+            <UnitConverter category={selectedCategory} />
+          </div>
+
+          <HomeContent onCategorySelect={handleCategoryClick} />
+        </main>
+
+        {/* 右侧广告 */}
+        <aside className="sidebar-ads sidebar-ads-right">
+          <AdSense 
+            adSlot="right-sidebar" 
+            adFormat="vertical"
+            style={{ minWidth: '160px', minHeight: '600px' }}
+            className="sidebar-ad"
+          />
+        </aside>
+      </div>
 
       <Footer onCategorySelect={handleCategoryClick} />
     </div>

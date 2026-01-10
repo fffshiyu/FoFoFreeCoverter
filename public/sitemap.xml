@@ -3,7 +3,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://fofo.unit/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://fofo.unit/?lang=en" />
@@ -17,7 +17,7 @@
   <!-- Length Converter -->
   <url>
     <loc>https://fofo.unit/#length</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -25,7 +25,7 @@
   <!-- Weight Converter -->
   <url>
     <loc>https://fofo.unit/#weight</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -33,7 +33,7 @@
   <!-- Temperature Converter -->
   <url>
     <loc>https://fofo.unit/#temperature</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -41,7 +41,7 @@
   <!-- Volume Converter -->
   <url>
     <loc>https://fofo.unit/#volume</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -49,7 +49,7 @@
   <!-- Time Converter -->
   <url>
     <loc>https://fofo.unit/#time</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -57,7 +57,7 @@
   <!-- Area Converter -->
   <url>
     <loc>https://fofo.unit/#area</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -65,7 +65,7 @@
   <!-- Speed Converter -->
   <url>
     <loc>https://fofo.unit/#speed</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -73,7 +73,7 @@
   <!-- Energy Converter -->
   <url>
     <loc>https://fofo.unit/#energy</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -81,7 +81,7 @@
   <!-- Pressure Converter -->
   <url>
     <loc>https://fofo.unit/#pressure</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -89,7 +89,7 @@
   <!-- Power Converter -->
   <url>
     <loc>https://fofo.unit/#power</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -97,7 +97,7 @@
   <!-- Data Converter -->
   <url>
     <loc>https://fofo.unit/#data</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -105,7 +105,7 @@
   <!-- Angle Converter -->
   <url>
     <loc>https://fofo.unit/#angle</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -113,7 +113,7 @@
   <!-- Frequency Converter -->
   <url>
     <loc>https://fofo.unit/#frequency</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -121,7 +121,7 @@
   <!-- Force Converter -->
   <url>
     <loc>https://fofo.unit/#force</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -129,7 +129,7 @@
   <!-- Torque Converter -->
   <url>
     <loc>https://fofo.unit/#torque</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -137,8 +137,16 @@
   <!-- Density Converter -->
   <url>
     <loc>https://fofo.unit/#density</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+  
+  <!-- Currency Converter -->
+  <url>
+    <loc>https://fofo.unit/#currency</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
   </url>
 </urlset>

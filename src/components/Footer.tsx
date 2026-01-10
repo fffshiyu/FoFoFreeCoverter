@@ -1,5 +1,6 @@
 import { UnitCategory, unitCategories } from '../utils/converters';
 import { useLanguage } from '../contexts/LanguageContext';
+import AdSense from './AdSense';
 import './Footer.css';
 
 interface FooterProps {
@@ -99,6 +100,16 @@ export default function Footer({ onCategorySelect }: FooterProps) {
             </a>
           </div>
         </div>
+      </div>
+
+      {/* 页脚底部广告 */}
+      <div className="footer-ad-container">
+        <AdSense 
+          adSlot="footer-bottom" 
+          adFormat="horizontal"
+          style={{ width: '100%', minHeight: '90px' }}
+          className="footer-ad"
+        />
       </div>
 
       <div className="footer-bottom">

@@ -1,0 +1,22 @@
+.adsense-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.sidebar-ad {
+  position: sticky;
+  top: 20px;
+}
+
+.footer-ad {
+  width: 100%;
+  max-width: 728px;
+}
+
+@media (max-width: 1200px) {
+  .sidebar-ad {
+    display: none;
+  }
+}

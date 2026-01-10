@@ -3,9 +3,45 @@
   display: flex;
   flex-direction: column;
   padding: 0;
-  max-width: 1400px;
+  max-width: 100%;
   margin: 0 auto;
   position: relative;
+}
+
+.app-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.sidebar-ads {
+  flex-shrink: 0;
+  position: sticky;
+  top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.sidebar-ads-left {
+  order: 1;
+}
+
+.sidebar-ads-right {
+  order: 3;
+}
+
+.sidebar-ad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
 }
 
 .app-header {
@@ -48,8 +84,9 @@
   position: relative;
   z-index: 1;
   max-width: 1400px;
-  margin: 0 auto;
+  margin: 0;
   width: 100%;
+  order: 2;
 }
 
 .category-selector {
@@ -133,6 +170,16 @@
   width: 100%;
 }
 
+@media (max-width: 1200px) {
+  .sidebar-ads {
+    display: none;
+  }
+
+  .app-layout {
+    padding: 0 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .app-title {
     font-size: 22px;
@@ -158,5 +205,9 @@
 
   .button-text {
     font-size: 9px;
+  }
+
+  .app-layout {
+    padding: 0 10px;
   }
 }
