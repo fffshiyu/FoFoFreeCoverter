@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Unit, UnitCategory, unitCategories, convertUnit } from '../utils/converters';
+import { UnitCategory, unitCategories, convertUnit } from '../utils/converters';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getUnitName } from '../utils/unitNames';
 import './UnitConverter.css';

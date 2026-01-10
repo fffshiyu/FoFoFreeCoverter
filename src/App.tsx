@@ -4,7 +4,7 @@ import UnitConverter from './components/UnitConverter';
 import HomeContent from './components/HomeContent';
 import Footer from './components/Footer';
 import LanguageSelector from './components/LanguageSelector';
-import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+import { useLanguage } from './contexts/LanguageContext';
 import {
   LengthIcon,
   WeightIcon,
@@ -86,7 +86,7 @@ function AppContent() {
 
       <main className="app-main">
         <div className="category-selector">
-          {Object.entries(unitCategories).map(([key, category]) => {
+          {Object.entries(unitCategories).map(([key]) => {
             const IconComponent = categoryIcons[key as UnitCategory];
             const labelKey = categoryLabels[key as UnitCategory];
             return (

@@ -35,7 +35,7 @@ export default function Footer({ onCategorySelect }: FooterProps) {
         <div className="footer-section">
           <h3 className="footer-title">{t.unitConverters}</h3>
           <div className="footer-links">
-            {categories.slice(0, 8).map(([key, category]) => (
+            {categories.slice(0, 8).map(([key]) => (
               <a 
                 key={key} 
                 href={`#${key}`} 
@@ -54,7 +54,7 @@ export default function Footer({ onCategorySelect }: FooterProps) {
         <div className="footer-section">
           <h3 className="footer-title">{t.moreCategories}</h3>
           <div className="footer-links">
-            {categories.slice(8).map(([key, category]) => (
+            {categories.slice(8).map(([key]) => (
               <a 
                 key={key} 
                 href={`#${key}`} 
@@ -73,7 +73,7 @@ export default function Footer({ onCategorySelect }: FooterProps) {
         <div className="footer-section">
           <h3 className="footer-title">{t.sitemap}</h3>
           <div className="footer-links">
-            {categories.slice(0, 8).map(([key, category]) => (
+            {categories.slice(0, 8).map(([key]) => (
               <a 
                 key={key}
                 href={`#${key}`} 
