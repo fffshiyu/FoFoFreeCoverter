@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
+Crawl-delay: 0
 
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://fofo-unit-converter.vercel.app/sitemap.xml
 Sitemap: https://fofo.unit/sitemap.xml
