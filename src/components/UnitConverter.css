@@ -10,7 +10,6 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   height: 100%;
   max-height: 100%;
   overflow: hidden;
@@ -35,6 +34,9 @@
 .converter-input-output-section {
   margin-bottom: 20px;
   flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .input-output-row {
@@ -43,15 +45,18 @@
   justify-content: center;
   gap: 16px;
   width: 100%;
+  max-width: 100%;
 }
 
 .value-input-group,
 .value-output-group {
   flex: 1;
   max-width: 320px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  align-items: center;
 }
 
 .main-input,
@@ -68,6 +73,7 @@
   outline: none;
   font-family: 'CustomFont', sans-serif;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .main-input:focus {
@@ -102,6 +108,7 @@
   align-items: center;
   justify-content: center;
   gap: 4px;
+  width: 100%;
 }
 
 .input-flag,
@@ -120,6 +127,7 @@
   min-height: 0;
   overflow-y: auto;
   width: 100%;
+  justify-items: center;
 }
 
 .units-group {
@@ -127,6 +135,8 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 100%;
+  align-items: center;
 }
 
 .units-label {
@@ -146,6 +156,8 @@
   background: transparent;
   border-radius: 0;
   border: none;
+  width: 100%;
+  justify-items: center;
 }
 
 .unit-button {
