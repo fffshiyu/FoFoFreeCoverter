@@ -39,16 +39,25 @@ const examples: Record<UnitCategory, Array<{ from: string; fromValue: number; to
     { from: 'meter', fromValue: 1, to: 'foot', toValue: 3.28084 },
     { from: 'kilometer', fromValue: 1, to: 'mile', toValue: 0.621371 },
     { from: 'inch', fromValue: 1, to: 'centimeter', toValue: 2.54 },
+    { from: 'yard', fromValue: 1, to: 'meter', toValue: 0.9144 },
+    { from: 'mile', fromValue: 1, to: 'kilometer', toValue: 1.60934 },
+    { from: 'foot', fromValue: 1, to: 'meter', toValue: 0.3048 },
   ],
   weight: [
     { from: 'kilogram', fromValue: 1, to: 'pound', toValue: 2.20462 },
     { from: 'pound', fromValue: 1, to: 'kilogram', toValue: 0.453592 },
     { from: 'ounce', fromValue: 1, to: 'gram', toValue: 28.3495 },
+    { from: 'ton', fromValue: 1, to: 'kilogram', toValue: 1000 },
+    { from: 'gram', fromValue: 1000, to: 'kilogram', toValue: 1 },
+    { from: 'stone', fromValue: 1, to: 'kilogram', toValue: 6.35029 },
   ],
   temperature: [
     { from: 'celsius', fromValue: 0, to: 'fahrenheit', toValue: 32 },
     { from: 'celsius', fromValue: 100, to: 'fahrenheit', toValue: 212 },
     { from: 'celsius', fromValue: -40, to: 'fahrenheit', toValue: -40 },
+    { from: 'fahrenheit', fromValue: 32, to: 'celsius', toValue: 0 },
+    { from: 'celsius', fromValue: 25, to: 'fahrenheit', toValue: 77 },
+    { from: 'kelvin', fromValue: 273.15, to: 'celsius', toValue: 0 },
   ],
   volume: [
     { from: 'liter', fromValue: 1, to: 'gallon', toValue: 0.264172 },
@@ -119,6 +128,9 @@ const examples: Record<UnitCategory, Array<{ from: string; fromValue: number; to
     { from: 'USD', fromValue: 1, to: 'EUR', toValue: 0.92 },
     { from: 'USD', fromValue: 1, to: 'GBP', toValue: 0.79 },
     { from: 'CNY', fromValue: 1, to: 'USD', toValue: 0.14 },
+    { from: 'USD', fromValue: 1, to: 'JPY', toValue: 150 },
+    { from: 'EUR', fromValue: 1, to: 'GBP', toValue: 0.86 },
+    { from: 'USD', fromValue: 1, to: 'CNY', toValue: 7.2 },
   ],
 };
 
@@ -174,9 +186,11 @@ export default function ConverterPage() {
           <h1 className="converter-page-title">
             {t[categoryLabels[category]]} {t.converter}
           </h1>
-          <LanguageSelector currentLanguage={language} onLanguageChange={setLanguage} />
+          <a href="/" className="back-to-home">← {t.siteName}</a>
+          <div className="header-language-selector">
+            <LanguageSelector currentLanguage={language} onLanguageChange={setLanguage} />
+          </div>
         </div>
-        <a href="/" className="back-to-home">← {t.siteName}</a>
       </header>
 
       <div className="converter-page-layout">

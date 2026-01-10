@@ -14,30 +14,35 @@
   max-width: 1600px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   position: relative;
+}
+
+.header-language-selector {
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .converter-page-title {
   font-size: 32px;
   font-weight: 700;
   color: var(--text-primary);
-  margin: 0;
+  margin: 0 0 12px 0;
   letter-spacing: -0.5px;
   flex: 1;
   text-align: center;
 }
 
 .back-to-home {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  display: block;
+  text-align: center;
   font-size: 14px;
   color: var(--text-secondary);
   text-decoration: none;
   transition: color 0.15s ease;
+  margin-top: 8px;
 }
 
 .back-to-home:hover {
@@ -60,12 +65,16 @@
 
 .converter-page-main {
   flex: 1;
-  max-width: 1400px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 40px;
-  align-items: center;
+  width: 100%;
+}
+
+.converter-page-main > * {
+  width: 100%;
 }
 
 .converter-examples {
@@ -82,6 +91,7 @@
   color: var(--text-primary);
   margin: 0 0 24px 0;
   letter-spacing: -0.3px;
+  text-align: center;
 }
 
 .examples-grid {
@@ -153,20 +163,16 @@
   }
 
   .back-to-home {
-    position: static;
-    transform: none;
     margin-bottom: 12px;
-    display: block;
   }
 
-  .converter-page-header-content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+  .header-language-selector {
+    position: static;
+    margin-top: 12px;
   }
 
   .converter-page-title {
-    text-align: left;
+    text-align: center;
     width: 100%;
   }
 
