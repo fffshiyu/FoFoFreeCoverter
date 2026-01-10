@@ -16,7 +16,8 @@ export type UnitCategory =
   | 'frequency'
   | 'force'
   | 'torque'
-  | 'density';
+  | 'density'
+  | 'currency';
 
 export interface Unit {
   name: string;
@@ -653,6 +654,118 @@ export const densityUnits: Record<string, Unit> = {
   },
 };
 
+// 货币单位（使用 ISO 4217 货币代码）
+export const currencyUnits: Record<string, Unit> = {
+  USD: {
+    name: '美元',
+    symbol: 'USD',
+    toBase: (v) => v, // 基准货币
+    fromBase: (v) => v,
+  },
+  EUR: {
+    name: '欧元',
+    symbol: 'EUR',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+  GBP: {
+    name: '英镑',
+    symbol: 'GBP',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+  JPY: {
+    name: '日元',
+    symbol: 'JPY',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+  CNY: {
+    name: '人民币',
+    symbol: 'CNY',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+  AUD: {
+    name: '澳元',
+    symbol: 'AUD',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+  CAD: {
+    name: '加元',
+    symbol: 'CAD',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+  CHF: {
+    name: '瑞士法郎',
+    symbol: 'CHF',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+  HKD: {
+    name: '港币',
+    symbol: 'HKD',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+  INR: {
+    name: '印度卢比',
+    symbol: 'INR',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+  KRW: {
+    name: '韩元',
+    symbol: 'KRW',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+  MXN: {
+    name: '墨西哥比索',
+    symbol: 'MXN',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+  NZD: {
+    name: '新西兰元',
+    symbol: 'NZD',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+  SGD: {
+    name: '新加坡元',
+    symbol: 'SGD',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+  ZAR: {
+    name: '南非兰特',
+    symbol: 'ZAR',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+  BRL: {
+    name: '巴西雷亚尔',
+    symbol: 'BRL',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+  RUB: {
+    name: '俄罗斯卢布',
+    symbol: 'RUB',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+  TRY: {
+    name: '土耳其里拉',
+    symbol: 'TRY',
+    toBase: (v) => v,
+    fromBase: (v) => v,
+  },
+};
+
 export const unitCategories: Record<UnitCategory, { name: string; units: Record<string, Unit> }> = {
   length: {
     name: '长度',
@@ -717,6 +830,10 @@ export const unitCategories: Record<UnitCategory, { name: string; units: Record<
   density: {
     name: '密度',
     units: densityUnits,
+  },
+  currency: {
+    name: '货币',
+    units: currencyUnits,
   },
 };
 

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { UnitCategory, unitCategories, convertUnit } from '../utils/converters';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getUnitName } from '../utils/unitNames';
+import { convertCurrency } from '../utils/exchangeRate';
 import './UnitConverter.css';
 
 interface UnitConverterProps {
@@ -30,6 +31,7 @@ export default function UnitConverter({ category }: UnitConverterProps) {
     force: 'force',
     torque: 'torque',
     density: 'density',
+    currency: 'currency',
   };
   
   const [fromValue, setFromValue] = useState<string>('1');
@@ -59,12 +61,22 @@ export default function UnitConverter({ category }: UnitConverterProps) {
     
     const numValue = parseFloat(fromValue);
     if (!isNaN(numValue) && fromValue !== '') {
-      const converted = convertUnit(numValue, fromUnitObj, toUnitObj);
-      setToValue(converted.toFixed(10).replace(/\.?0+$/, ''));
+      if (category === 'currency') {
+        // 货币转换使用实时汇率
+        convertCurrency(numValue, fromUnit, toUnit).then((converted) => {
+          setToValue(converted.toFixed(6).replace(/\.?0+$/, ''));
+        }).catch(() => {
+          setToValue('');
+        });
+      } else {
+        // 其他单位使用标准转换
+        const converted = convertUnit(numValue, fromUnitObj, toUnitObj);
+        setToValue(converted.toFixed(10).replace(/\.?0+$/, ''));
+      }
     } else {
       setToValue('');
     }
-  }, [fromValue, fromUnit, toUnit, fromUnitObj, toUnitObj, lastEdited]);
+  }, [fromValue, fromUnit, toUnit, fromUnitObj, toUnitObj, lastEdited, category]);
 
   // 从右侧转换到左侧
   useEffect(() => {
@@ -72,12 +84,22 @@ export default function UnitConverter({ category }: UnitConverterProps) {
     
     const numValue = parseFloat(toValue);
     if (!isNaN(numValue) && toValue !== '') {
-      const converted = convertUnit(numValue, toUnitObj, fromUnitObj);
-      setFromValue(converted.toFixed(10).replace(/\.?0+$/, ''));
+      if (category === 'currency') {
+        // 货币转换使用实时汇率
+        convertCurrency(numValue, toUnit, fromUnit).then((converted) => {
+          setFromValue(converted.toFixed(6).replace(/\.?0+$/, ''));
+        }).catch(() => {
+          setFromValue('');
+        });
+      } else {
+        // 其他单位使用标准转换
+        const converted = convertUnit(numValue, toUnitObj, fromUnitObj);
+        setFromValue(converted.toFixed(10).replace(/\.?0+$/, ''));
+      }
     } else {
       setFromValue('');
     }
-  }, [toValue, fromUnit, toUnit, fromUnitObj, toUnitObj, lastEdited]);
+  }, [toValue, fromUnit, toUnit, fromUnitObj, toUnitObj, lastEdited, category]);
 
   const handleFromChange = (value: string) => {
     setFromValue(value);

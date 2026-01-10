@@ -123,3 +123,10 @@ export const DensityIcon: React.FC<IconProps> = ({ className = '', size = 24 }) 
     <line x1="15" y1="6" x2="15" y2="18" strokeLinecap="round"/>
   </svg>
 );
+
+export const CurrencyIcon: React.FC<IconProps> = ({ className = '', size = 24 }) => (
+  <svg className={className} width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <circle cx="12" cy="12" r="10"/>
+    <path d="M12 6V18M9 9C9 8.44772 9.44772 8 10 8H14C14.5523 8 15 8.44772 15 9C15 9.55228 14.5523 10 14 10H10C9.44772 10 9 10.4477 9 11C9 11.5523 9.44772 12 10 12H14C14.5523 12 15 12.4477 15 13C15 13.5523 14.5523 14 14 14H10C9.44772 14 9 14.4477 9 15" strokeLinecap="round"/>
+  </svg>
+);

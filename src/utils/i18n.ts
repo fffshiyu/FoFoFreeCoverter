@@ -18,6 +18,7 @@ export interface Translations {
   force: string;
   torque: string;
   density: string;
+  currency: string;
   converter: string;
   inputValue: string;
   result: string;
@@ -79,6 +80,7 @@ export const translations: Record<Language, Translations> = {
     force: 'Force',
     torque: 'Torque',
     density: 'Density',
+    currency: 'Currency',
     converter: 'Converter',
     inputValue: 'Enter value',
     result: 'Result',
@@ -138,6 +140,7 @@ export const translations: Record<Language, Translations> = {
     force: '力',
     torque: '扭矩',
     density: '密度',
+    currency: '货币',
     converter: '转换器',
     inputValue: '输入数值',
     result: '结果',
@@ -197,6 +200,7 @@ export const translations: Record<Language, Translations> = {
     force: 'Fuerza',
     torque: 'Torque',
     density: 'Densidad',
+    currency: 'Moneda',
     converter: 'Convertidor',
     inputValue: 'Ingrese valor',
     result: 'Resultado',
@@ -256,6 +260,7 @@ export const translations: Record<Language, Translations> = {
     force: 'Force',
     torque: 'Couple',
     density: 'Densité',
+    currency: 'Devise',
     converter: 'Convertisseur',
     inputValue: 'Entrer la valeur',
     result: 'Résultat',
@@ -315,6 +320,7 @@ export const translations: Record<Language, Translations> = {
     force: 'Kraft',
     torque: 'Drehmoment',
     density: 'Dichte',
+    currency: 'Währung',
     converter: 'Umrechner',
     inputValue: 'Wert eingeben',
     result: 'Ergebnis',
@@ -374,6 +380,7 @@ export const translations: Record<Language, Translations> = {
     force: '力',
     torque: 'トルク',
     density: '密度',
+    currency: '通貨',
     converter: '変換器',
     inputValue: '値を入力',
     result: '結果',

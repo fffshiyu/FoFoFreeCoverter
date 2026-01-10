@@ -28,6 +28,7 @@ export default function HomeContent({ onCategorySelect }: HomeContentProps) {
     force: 'force',
     torque: 'torque',
     density: 'density',
+    currency: 'currency',
   };
 
   return (

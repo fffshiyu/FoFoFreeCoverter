@@ -22,6 +22,7 @@ import {
   ForceIcon,
   TorqueIcon,
   DensityIcon,
+  CurrencyIcon,
 } from './components/Icons';
 import './App.css';
 
@@ -42,6 +43,7 @@ const categoryIcons: Record<UnitCategory, React.ComponentType<{ className?: stri
   force: ForceIcon,
   torque: TorqueIcon,
   density: DensityIcon,
+  currency: CurrencyIcon,
 };
 
 function AppContent() {
@@ -75,6 +77,7 @@ function AppContent() {
     force: 'force',
     torque: 'torque',
     density: 'density',
+    currency: 'currency',
   };
 
   return (

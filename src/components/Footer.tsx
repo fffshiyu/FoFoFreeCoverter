@@ -27,6 +27,7 @@ export default function Footer({ onCategorySelect }: FooterProps) {
     force: 'force',
     torque: 'torque',
     density: 'density',
+    currency: 'currency',
   };
 
   return (

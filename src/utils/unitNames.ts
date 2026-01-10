@@ -32,7 +32,9 @@ export type UnitKey =
   // Torque
   | 'newtonMeter' | 'poundFoot' | 'poundInch' | 'kilogramMeter'
   // Density
-  | 'kilogramPerCubicMeter' | 'gramPerCubicCentimeter' | 'poundPerCubicFoot' | 'poundPerCubicInch';
+  | 'kilogramPerCubicMeter' | 'gramPerCubicCentimeter' | 'poundPerCubicFoot' | 'poundPerCubicInch'
+  // Currency
+  | 'USD' | 'EUR' | 'GBP' | 'JPY' | 'CNY' | 'AUD' | 'CAD' | 'CHF' | 'HKD' | 'INR' | 'KRW' | 'MXN' | 'NZD' | 'SGD' | 'ZAR' | 'BRL' | 'RUB' | 'TRY';
 
 export const unitNames: Record<Language, Record<UnitKey, string>> = {
   en: {
@@ -146,6 +148,25 @@ export const unitNames: Record<Language, Record<UnitKey, string>> = {
     gramPerCubicCentimeter: 'Gram per Cubic Centimeter',
     poundPerCubicFoot: 'Pound per Cubic Foot',
     poundPerCubicInch: 'Pound per Cubic Inch',
+    // Currency
+    USD: 'US Dollar',
+    EUR: 'Euro',
+    GBP: 'British Pound',
+    JPY: 'Japanese Yen',
+    CNY: 'Chinese Yuan',
+    AUD: 'Australian Dollar',
+    CAD: 'Canadian Dollar',
+    CHF: 'Swiss Franc',
+    HKD: 'Hong Kong Dollar',
+    INR: 'Indian Rupee',
+    KRW: 'South Korean Won',
+    MXN: 'Mexican Peso',
+    NZD: 'New Zealand Dollar',
+    SGD: 'Singapore Dollar',
+    ZAR: 'South African Rand',
+    BRL: 'Brazilian Real',
+    RUB: 'Russian Ruble',
+    TRY: 'Turkish Lira',
   },
   zh: {
     // Length
@@ -258,6 +279,25 @@ export const unitNames: Record<Language, Record<UnitKey, string>> = {
     gramPerCubicCentimeter: '克/立方厘米',
     poundPerCubicFoot: '磅/立方英尺',
     poundPerCubicInch: '磅/立方英寸',
+    // Currency
+    USD: '美元',
+    EUR: '欧元',
+    GBP: '英镑',
+    JPY: '日元',
+    CNY: '人民币',
+    AUD: '澳元',
+    CAD: '加元',
+    CHF: '瑞士法郎',
+    HKD: '港币',
+    INR: '印度卢比',
+    KRW: '韩元',
+    MXN: '墨西哥比索',
+    NZD: '新西兰元',
+    SGD: '新加坡元',
+    ZAR: '南非兰特',
+    BRL: '巴西雷亚尔',
+    RUB: '俄罗斯卢布',
+    TRY: '土耳其里拉',
   },
   es: {
     // Length
@@ -370,6 +410,25 @@ export const unitNames: Record<Language, Record<UnitKey, string>> = {
     gramPerCubicCentimeter: 'Gramo por Centímetro Cúbico',
     poundPerCubicFoot: 'Libra por Pie Cúbico',
     poundPerCubicInch: 'Libra por Pulgada Cúbica',
+    // Currency
+    USD: 'Dólar Estadounidense',
+    EUR: 'Euro',
+    GBP: 'Libra Esterlina',
+    JPY: 'Yen Japonés',
+    CNY: 'Yuan Chino',
+    AUD: 'Dólar Australiano',
+    CAD: 'Dólar Canadiense',
+    CHF: 'Franco Suizo',
+    HKD: 'Dólar de Hong Kong',
+    INR: 'Rupia India',
+    KRW: 'Won Surcoreano',
+    MXN: 'Peso Mexicano',
+    NZD: 'Dólar Neozelandés',
+    SGD: 'Dólar de Singapur',
+    ZAR: 'Rand Sudafricano',
+    BRL: 'Real Brasileño',
+    RUB: 'Rublo Ruso',
+    TRY: 'Lira Turca',
   },
   fr: {
     // Length
@@ -482,6 +541,25 @@ export const unitNames: Record<Language, Record<UnitKey, string>> = {
     gramPerCubicCentimeter: 'Gramme par Centimètre Cube',
     poundPerCubicFoot: 'Livre par Pied Cube',
     poundPerCubicInch: 'Livre par Pouce Cube',
+    // Currency
+    USD: 'Dollar Américain',
+    EUR: 'Euro',
+    GBP: 'Livre Sterling',
+    JPY: 'Yen Japonais',
+    CNY: 'Yuan Chinois',
+    AUD: 'Dollar Australien',
+    CAD: 'Dollar Canadien',
+    CHF: 'Franc Suisse',
+    HKD: 'Dollar de Hong Kong',
+    INR: 'Roupie Indienne',
+    KRW: 'Won Sud-Coréen',
+    MXN: 'Peso Mexicain',
+    NZD: 'Dollar Néo-Zélandais',
+    SGD: 'Dollar de Singapour',
+    ZAR: 'Rand Sud-Africain',
+    BRL: 'Real Brésilien',
+    RUB: 'Rouble Russe',
+    TRY: 'Lire Turque',
   },
   de: {
     // Length
@@ -594,6 +672,25 @@ export const unitNames: Record<Language, Record<UnitKey, string>> = {
     gramPerCubicCentimeter: 'Gramm pro Kubikzentimeter',
     poundPerCubicFoot: 'Pfund pro Kubikfuß',
     poundPerCubicInch: 'Pfund pro Kubikzoll',
+    // Currency
+    USD: 'US-Dollar',
+    EUR: 'Euro',
+    GBP: 'Britisches Pfund',
+    JPY: 'Japanischer Yen',
+    CNY: 'Chinesischer Yuan',
+    AUD: 'Australischer Dollar',
+    CAD: 'Kanadischer Dollar',
+    CHF: 'Schweizer Franken',
+    HKD: 'Hongkong-Dollar',
+    INR: 'Indische Rupie',
+    KRW: 'Südkoreanischer Won',
+    MXN: 'Mexikanischer Peso',
+    NZD: 'Neuseeland-Dollar',
+    SGD: 'Singapur-Dollar',
+    ZAR: 'Südafrikanischer Rand',
+    BRL: 'Brasilianischer Real',
+    RUB: 'Russischer Rubel',
+    TRY: 'Türkische Lira',
   },
   ja: {
     // Length
@@ -706,6 +803,25 @@ export const unitNames: Record<Language, Record<UnitKey, string>> = {
     gramPerCubicCentimeter: 'グラム毎立方センチメートル',
     poundPerCubicFoot: 'ポンド毎立方フィート',
     poundPerCubicInch: 'ポンド毎立方インチ',
+    // Currency
+    USD: '米ドル',
+    EUR: 'ユーロ',
+    GBP: '英ポンド',
+    JPY: '日本円',
+    CNY: '中国人民元',
+    AUD: 'オーストラリアドル',
+    CAD: 'カナダドル',
+    CHF: 'スイスフラン',
+    HKD: '香港ドル',
+    INR: 'インドルピー',
+    KRW: '韓国ウォン',
+    MXN: 'メキシコペソ',
+    NZD: 'ニュージーランドドル',
+    SGD: 'シンガポールドル',
+    ZAR: '南アフリカランド',
+    BRL: 'ブラジルレアル',
+    RUB: 'ロシアルーブル',
+    TRY: 'トルコリラ',
   },
 };
 
