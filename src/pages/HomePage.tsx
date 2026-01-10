@@ -70,11 +70,22 @@ const categoryToSlug: Record<UnitCategory, string> = {
 };
 
 export default function HomePage() {
-  const [selectedCategory] = useState<UnitCategory>('length');
+  const [selectedCategory, setSelectedCategory] = useState<UnitCategory>('length');
   const { language, setLanguage, t } = useLanguage();
   const navigate = useNavigate();
 
   const handleCategoryClick = (category: UnitCategory) => {
+    if (!unitCategories[category]) {
+      console.error('Invalid category:', category);
+      return;
+    }
+    // 只在首页切换类别，不跳转
+    setSelectedCategory(category);
+    // 滚动到转换器位置
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleCategoryCardClick = (category: UnitCategory) => {
     if (!unitCategories[category]) {
       console.error('Invalid category:', category);
       return;
@@ -144,7 +155,7 @@ export default function HomePage() {
             <UnitConverter category={selectedCategory} />
           </div>
 
-          <HomeContent onCategorySelect={handleCategoryClick} />
+          <HomeContent onCategorySelect={handleCategoryCardClick} />
         </main>
 
         {/* 右侧广告 */}

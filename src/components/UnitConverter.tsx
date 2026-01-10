@@ -15,26 +15,6 @@ export default function UnitConverter({ category }: UnitConverterProps) {
   const categoryData = unitCategories[category];
   const unitEntries = Object.entries(categoryData.units);
   
-  const categoryLabels: Record<UnitCategory, keyof typeof t> = {
-    length: 'length',
-    weight: 'weight',
-    temperature: 'temperature',
-    volume: 'volume',
-    time: 'time',
-    area: 'area',
-    speed: 'speed',
-    energy: 'energy',
-    pressure: 'pressure',
-    power: 'power',
-    data: 'data',
-    angle: 'angle',
-    frequency: 'frequency',
-    force: 'force',
-    torque: 'torque',
-    density: 'density',
-    currency: 'currency',
-  };
-  
   const [fromValue, setFromValue] = useState<string>('1');
   const [toValue, setToValue] = useState<string>('');
   const [fromUnit, setFromUnit] = useState<string>(unitEntries[0]?.[0] || '');
@@ -134,25 +114,24 @@ export default function UnitConverter({ category }: UnitConverterProps) {
 
   return (
     <div className="converter-container">
-      <div className="converter-header">
-        <h2>{t[categoryLabels[category]]} {t.converter}</h2>
-      </div>
 
       <div className="converter-input-output-section">
         <div className="input-output-row">
           <div className="value-input-group">
-            <input
-              type="number"
-              className="main-input"
-              value={fromValue}
-              onChange={(e) => handleFromChange(e.target.value)}
-              placeholder={t.inputValue}
-            />
-            <div className="input-unit-label">
-              {category === 'currency' && getCurrencyFlag(fromUnit) && (
-                <span className="input-flag">{getCurrencyFlag(fromUnit)} </span>
-              )}
-              {fromUnitObj.symbol}
+            <div className="input-wrapper">
+              <input
+                type="number"
+                className="main-input"
+                value={fromValue}
+                onChange={(e) => handleFromChange(e.target.value)}
+                placeholder={t.inputValue}
+              />
+              <div className="input-unit-label-inline">
+                {category === 'currency' && getCurrencyFlag(fromUnit) && (
+                  <span className="input-flag">{getCurrencyFlag(fromUnit)} </span>
+                )}
+                {fromUnitObj.symbol}
+              </div>
             </div>
           </div>
 
@@ -166,18 +145,20 @@ export default function UnitConverter({ category }: UnitConverterProps) {
           </button>
 
           <div className="value-output-group">
-            <input
-              type="number"
-              className="main-output"
-              value={toValue}
-              onChange={(e) => handleToChange(e.target.value)}
-              placeholder={t.inputValue}
-            />
-            <div className="output-unit-label">
-              {category === 'currency' && getCurrencyFlag(toUnit) && (
-                <span className="output-flag">{getCurrencyFlag(toUnit)} </span>
-              )}
-              {toUnitObj.symbol}
+            <div className="input-wrapper">
+              <input
+                type="number"
+                className="main-output"
+                value={toValue}
+                onChange={(e) => handleToChange(e.target.value)}
+                placeholder={t.inputValue}
+              />
+              <div className="output-unit-label-inline">
+                {category === 'currency' && getCurrencyFlag(toUnit) && (
+                  <span className="output-flag">{getCurrencyFlag(toUnit)} </span>
+                )}
+                {toUnitObj.symbol}
+              </div>
             </div>
           </div>
         </div>

@@ -63,66 +63,105 @@ const examples: Record<UnitCategory, Array<{ from: string; fromValue: number; to
     { from: 'liter', fromValue: 1, to: 'gallon', toValue: 0.264172 },
     { from: 'milliliter', fromValue: 1000, to: 'liter', toValue: 1 },
     { from: 'gallon', fromValue: 1, to: 'liter', toValue: 3.78541 },
+    { from: 'cubicMeter', fromValue: 1, to: 'liter', toValue: 1000 },
+    { from: 'quart', fromValue: 1, to: 'liter', toValue: 0.946353 },
+    { from: 'pint', fromValue: 1, to: 'milliliter', toValue: 473.176 },
   ],
   time: [
     { from: 'hour', fromValue: 1, to: 'minute', toValue: 60 },
     { from: 'day', fromValue: 1, to: 'hour', toValue: 24 },
     { from: 'week', fromValue: 1, to: 'day', toValue: 7 },
+    { from: 'minute', fromValue: 60, to: 'hour', toValue: 1 },
+    { from: 'year', fromValue: 1, to: 'day', toValue: 365 },
+    { from: 'month', fromValue: 1, to: 'day', toValue: 30 },
   ],
   area: [
     { from: 'squareMeter', fromValue: 1, to: 'squareFoot', toValue: 10.7639 },
     { from: 'hectare', fromValue: 1, to: 'acre', toValue: 2.47105 },
     { from: 'squareKilometer', fromValue: 1, to: 'squareMile', toValue: 0.386102 },
+    { from: 'acre', fromValue: 1, to: 'squareMeter', toValue: 4046.86 },
+    { from: 'squareFoot', fromValue: 1, to: 'squareMeter', toValue: 0.092903 },
+    { from: 'squareInch', fromValue: 1, to: 'squareCentimeter', toValue: 6.4516 },
   ],
   speed: [
     { from: 'kilometerPerHour', fromValue: 100, to: 'milePerHour', toValue: 62.1371 },
     { from: 'meterPerSecond', fromValue: 10, to: 'kilometerPerHour', toValue: 36 },
     { from: 'milePerHour', fromValue: 60, to: 'kilometerPerHour', toValue: 96.5606 },
+    { from: 'knot', fromValue: 1, to: 'kilometerPerHour', toValue: 1.852 },
+    { from: 'footPerSecond', fromValue: 1, to: 'meterPerSecond', toValue: 0.3048 },
+    { from: 'meterPerSecond', fromValue: 1, to: 'milePerHour', toValue: 2.23694 },
   ],
   energy: [
     { from: 'joule', fromValue: 1000, to: 'kilojoule', toValue: 1 },
     { from: 'calorie', fromValue: 1, to: 'joule', toValue: 4.184 },
     { from: 'kilowattHour', fromValue: 1, to: 'joule', toValue: 3600000 },
+    { from: 'kilocalorie', fromValue: 1, to: 'calorie', toValue: 1000 },
+    { from: 'btu', fromValue: 1, to: 'joule', toValue: 1055.06 },
+    { from: 'wattHour', fromValue: 1, to: 'joule', toValue: 3600 },
   ],
   pressure: [
     { from: 'pascal', fromValue: 101325, to: 'atmosphere', toValue: 1 },
     { from: 'bar', fromValue: 1, to: 'pascal', toValue: 100000 },
     { from: 'psi', fromValue: 1, to: 'pascal', toValue: 6894.76 },
+    { from: 'kilopascal', fromValue: 1, to: 'pascal', toValue: 1000 },
+    { from: 'torr', fromValue: 1, to: 'pascal', toValue: 133.322 },
+    { from: 'atmosphere', fromValue: 1, to: 'psi', toValue: 14.6959 },
   ],
   power: [
     { from: 'watt', fromValue: 1000, to: 'kilowatt', toValue: 1 },
     { from: 'horsepower', fromValue: 1, to: 'watt', toValue: 745.7 },
     { from: 'kilowatt', fromValue: 1, to: 'horsepower', toValue: 1.34102 },
+    { from: 'megawatt', fromValue: 1, to: 'kilowatt', toValue: 1000 },
+    { from: 'btuPerHour', fromValue: 1, to: 'watt', toValue: 0.293071 },
+    { from: 'kilowatt', fromValue: 1, to: 'watt', toValue: 1000 },
   ],
   data: [
     { from: 'byte', fromValue: 1024, to: 'kilobyte', toValue: 1 },
     { from: 'megabyte', fromValue: 1, to: 'kilobyte', toValue: 1024 },
     { from: 'gigabyte', fromValue: 1, to: 'megabyte', toValue: 1024 },
+    { from: 'terabyte', fromValue: 1, to: 'gigabyte', toValue: 1024 },
+    { from: 'kilobyte', fromValue: 1024, to: 'megabyte', toValue: 1 },
+    { from: 'bit', fromValue: 8, to: 'byte', toValue: 1 },
   ],
   angle: [
     { from: 'degree', fromValue: 180, to: 'radian', toValue: 3.14159 },
     { from: 'radian', fromValue: 1, to: 'degree', toValue: 57.2958 },
     { from: 'degree', fromValue: 90, to: 'gradian', toValue: 100 },
+    { from: 'radian', fromValue: 3.14159, to: 'degree', toValue: 180 },
+    { from: 'arcminute', fromValue: 60, to: 'degree', toValue: 1 },
+    { from: 'arcsecond', fromValue: 3600, to: 'degree', toValue: 1 },
   ],
   frequency: [
     { from: 'hertz', fromValue: 1000, to: 'kilohertz', toValue: 1 },
     { from: 'megahertz', fromValue: 1, to: 'kilohertz', toValue: 1000 },
     { from: 'gigahertz', fromValue: 1, to: 'megahertz', toValue: 1000 },
+    { from: 'kilohertz', fromValue: 1000, to: 'megahertz', toValue: 1 },
+    { from: 'megahertz', fromValue: 1000, to: 'gigahertz', toValue: 1 },
+    { from: 'hertz', fromValue: 1000000, to: 'megahertz', toValue: 1 },
   ],
   force: [
     { from: 'newton', fromValue: 1, to: 'poundForce', toValue: 0.224809 },
     { from: 'kilonewton', fromValue: 1, to: 'newton', toValue: 1000 },
     { from: 'poundForce', fromValue: 1, to: 'newton', toValue: 4.44822 },
+    { from: 'kilogramForce', fromValue: 1, to: 'newton', toValue: 9.80665 },
+    { from: 'newton', fromValue: 1000, to: 'kilonewton', toValue: 1 },
+    { from: 'poundForce', fromValue: 1, to: 'kilogramForce', toValue: 0.453592 },
   ],
   torque: [
     { from: 'newtonMeter', fromValue: 1, to: 'poundFoot', toValue: 0.737562 },
     { from: 'poundFoot', fromValue: 1, to: 'newtonMeter', toValue: 1.35582 },
     { from: 'kilogramMeter', fromValue: 1, to: 'newtonMeter', toValue: 9.80665 },
+    { from: 'poundInch', fromValue: 1, to: 'newtonMeter', toValue: 0.112985 },
+    { from: 'poundFoot', fromValue: 12, to: 'poundInch', toValue: 12 },
+    { from: 'newtonMeter', fromValue: 1, to: 'poundInch', toValue: 8.85075 },
   ],
   density: [
     { from: 'kilogramPerCubicMeter', fromValue: 1000, to: 'gramPerCubicCentimeter', toValue: 1 },
     { from: 'poundPerCubicFoot', fromValue: 1, to: 'kilogramPerCubicMeter', toValue: 16.0185 },
     { from: 'gramPerCubicCentimeter', fromValue: 1, to: 'kilogramPerCubicMeter', toValue: 1000 },
+    { from: 'poundPerCubicInch', fromValue: 1, to: 'kilogramPerCubicMeter', toValue: 27679.9 },
+    { from: 'gramPerCubicCentimeter', fromValue: 1, to: 'poundPerCubicFoot', toValue: 62.428 },
+    { from: 'kilogramPerCubicMeter', fromValue: 1, to: 'poundPerCubicFoot', toValue: 0.062428 },
   ],
   currency: [
     { from: 'USD', fromValue: 1, to: 'EUR', toValue: 0.92 },
@@ -142,10 +181,13 @@ export default function ConverterPage() {
   const category = slug ? slugToCategory[slug] : null;
 
   useEffect(() => {
+    // 滚动到页面顶部
+    window.scrollTo(0, 0);
+    
     if (!category || !unitCategories[category]) {
       navigate('/');
     }
-  }, [category, navigate]);
+  }, [category, navigate, slug]);
 
   if (!category || !unitCategories[category]) {
     return null;

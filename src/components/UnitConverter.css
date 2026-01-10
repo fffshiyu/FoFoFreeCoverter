@@ -49,6 +49,7 @@
   gap: 16px;
   width: 100%;
   max-width: 100%;
+  position: relative;
 }
 
 .value-input-group,
@@ -60,12 +61,20 @@
   flex-direction: column;
   gap: 8px;
   align-items: center;
+  position: relative;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .main-input,
 .main-output {
   width: 100%;
-  padding: 14px 18px;
+  padding: 14px 80px 14px 18px;
   border: 1px solid var(--border-color);
   border-radius: 4px;
   font-size: 18px;
@@ -75,8 +84,18 @@
   transition: all 0.15s ease;
   outline: none;
   font-family: 'CustomFont', sans-serif;
-  text-align: center;
+  text-align: left;
   box-sizing: border-box;
+  position: relative;
+  -moz-appearance: textfield;
+}
+
+.main-input::-webkit-outer-spin-button,
+.main-input::-webkit-inner-spin-button,
+.main-output::-webkit-outer-spin-button,
+.main-output::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .main-input:focus {
@@ -102,16 +121,36 @@
 
 .input-unit-label,
 .output-unit-label {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 14px;
   font-weight: 500;
   color: var(--text-secondary);
-  text-align: center;
   letter-spacing: 0.5px;
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 4px;
-  width: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.input-unit-label-inline,
+.output-unit-label-inline {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .input-flag,
@@ -248,8 +287,7 @@
   justify-content: center;
   box-shadow: var(--shadow);
   flex-shrink: 0;
-  align-self: flex-end;
-  margin-bottom: 32px;
+  align-self: center;
 }
 
 .swap-button-large:hover {
