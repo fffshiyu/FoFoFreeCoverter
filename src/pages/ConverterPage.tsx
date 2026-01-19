@@ -239,7 +239,7 @@ export default function ConverterPage() {
         {/* 左侧广告 */}
         <aside className="sidebar-ads sidebar-ads-left">
           <AdSense 
-            adSlot="left-sidebar" 
+            adSlot="2768442529" 
             adFormat="vertical"
             style={{ minWidth: '160px', minHeight: '600px' }}
             className="sidebar-ad"
@@ -281,7 +281,7 @@ export default function ConverterPage() {
         {/* 右侧广告 */}
         <aside className="sidebar-ads sidebar-ads-right">
           <AdSense 
-            adSlot="right-sidebar" 
+            adSlot="8666802318" 
             adFormat="vertical"
             style={{ minWidth: '160px', minHeight: '600px' }}
             className="sidebar-ad"
